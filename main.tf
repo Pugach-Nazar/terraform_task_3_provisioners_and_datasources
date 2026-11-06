@@ -2,11 +2,11 @@
 resource "null_resource" "install_nginx" {
 
   triggers = {
-    vm_id      = data.azurerm_virtual_machine.existing.id
-    page_hash  = filesha256("${path.module}/index.html")
-    nic_id     = data.azurerm_network_interface.existing.id
-    subnet_id  = data.azurerm_subnet.existing.id
-    vnet_id    = data.azurerm_virtual_network.existing.id
+    vm_id     = data.azurerm_virtual_machine.existing.id
+    page_hash = filesha256("${path.module}/index.html")
+    nic_id    = data.azurerm_network_interface.existing.id
+    subnet_id = data.azurerm_subnet.existing.id
+    vnet_id   = data.azurerm_virtual_network.existing.id
   }
 
   connection {
